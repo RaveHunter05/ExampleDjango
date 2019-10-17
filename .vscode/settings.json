@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "myvenv/bin/python3"
+    "python.pythonPath": "C:\\Users\\Sócrates\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }
