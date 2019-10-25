@@ -40,10 +40,13 @@ class Album(models.Model):
     Nombre=models.CharField(max_length=60)
     Tipo_album=models.CharField(max_length=30)
     Fecha_lanzamiento=models.DateField(auto_now=True)
+    Duracion_album=models.TimeField()
     '''Duracion=models.                     Investigar tipo de campo para manejar 
                                                         los tiempos hh//mm//ss
     '''
     Estrellas=models.IntegerField() #Validar valor maximo entre 1-5
+    Imagen=models.ImageField(upload_to='pic_folder/')
+
 
 class Tema(models.Model):
     Genero=models.ForeignKey(Genero, on_delete=models.CASCADE)
@@ -55,6 +58,9 @@ class Tema(models.Model):
     Estrellas=models.IntegerField() #Validar valor maximo entre 1-5
     Fecha_lanzamiento=models.DateField(auto_now=True)
     Precio=models.DecimalField(max_digits=10, decimal_places=2)
+    Duracion_album=models.TimeField()
+    Imagen=models.ImageField(upload_to='pic_folder/')
+
 
 class Tema_Productor(models.Model):
     Productor=models.ForeignKey(Productor, on_delete=models.CASCADE)
