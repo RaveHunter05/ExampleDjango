@@ -1,67 +1,112 @@
 from .models import *
 from rest_framework import serializers
 
-class ProductorSerializer(serializers.ModelSerializer):
+class productorSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Productor
+        model=productor
         fields='__all__'
         
-class CantanteSerializer(serializers.ModelSerializer):
+class cantanteSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Cantante
+        model=cantante
         fields='__all__'
 
-class GeneroSerializer(serializers.ModelSerializer):
+class generoSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Genero
+        model=genero
         fields='__all__'
 
-class AlbumSerializer(serializers.ModelSerializer):
+class albumSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Album
+        model=album
         fields='__all__'
 
-class TemaSerializer(serializers.ModelSerializer):
+class cancionSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Tema
+        model=cancion
         fields='__all__'
 
-class Tema_ProductorSerializer(serializers.ModelSerializer):
+class cancion_albumSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Tema_Productor
+        models=cancion_album
         fields='__all__'
 
-class Tema_CantanteSerializer(serializers.ModelSerializer):
+class cancion_generoSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Tema_Cantante
+        model=cancion_genero
         fields='__all__'
 
-class Album_GeneroSerializer(serializers.ModelSerializer):
+class album_generoSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Album_Genero
-        fields='__all__' 
+        model=album_genero
+        fields='__all__'
 
-class ClienteSerializer(serializers.ModelSerializer):
+class productor_cancionSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Cliente
+        model=productor_cancion
+        fields='__all__'
+
+class cantante_cancionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=cantante_cancion
+        fields='__all__'
+
+class productor_albumSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=productor_album
+        fields='__all__'
+
+class cantante_albumSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=cantante_album
+        fields='__all__'
+
+class suscriptorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=suscriptor
         fields='__all__'  
 
-class RolSerializer(serializers.ModelSerializer):
+class tarjetaSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Rol
-        fields='__all__'  
-
-class UsuarioSerializer(serializers.ModelSerializer):
-    class Meta:
-        model=Usuario
-        fields='__all__'                           
-
-class CompraSerializer(serializers.ModelSerializer):
-    class Meta:
-        model=Compra
+        model=tarjeta
         fields='__all__'
 
-class Detalle_CompraSerializer(serializers.ModelSerializer):
+class membresiaSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Detalle_Compra
+        model=membresia
+        fields='__all__'
+
+class rolSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=rol
+        fields='__all__'  
+
+class usuarioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=usuario
+        fields='__all__'
+
+class playlistSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=playlist
+        fields='__all__'   
+
+class playlist_cancionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=playlist_cancion   
+        fields='__all__'    
+
+class playlist_albumSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=playlist_album
+        fields='__all__'                 
+
+class compraSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=compra
+        fields='__all__'
+
+class compra_usuarioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=compra_usuario
         fields='__all__'        
