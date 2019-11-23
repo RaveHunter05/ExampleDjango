@@ -1,0 +1,111 @@
+ 
+  .position{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .positionRelative{
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+  }
+
+  
+  .premiere{
+    @extend .position;
+    background-image: url('https://res.cloudinary.com/dwh6m5mbn/image/upload/c_scale,h_460,w_830/v1528817106/News/Music/mus.jpg');
+    z-index:1;
+    
+  }
+
+  .secondaire{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    @extend .positionRelative;
+    top:0;
+    background-color: rgba(0, 0, 0, 0.41);
+    z-index:1000000;
+  }
+
+    .letra{
+
+    color:white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2rem;
+    z-index: 100000000000000;
+    text-align: center;
+    }
+
+
+    .secondaire>p{
+    @extend .letra;
+    }
+
+  .troisieme{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    @extend .positionRelative;
+    background-image: linear-gradient(47deg, rgba(149, 149, 149, 0.05) 0%, rgba(149, 149, 149, 0.05) 33.333%,rgba(228, 228, 228, 0.05) 33.333%, rgba(228, 228, 228, 0.05) 66.666%,rgba(55, 55, 55, 0.05) 66.666%, rgba(55, 55, 55, 0.05) 99.999%),linear-gradient(331deg, rgba(179, 179, 179, 0.05) 0%, rgba(179, 179, 179, 0.05) 33.333%,rgba(71, 71, 71, 0.05) 33.333%, rgba(71, 71, 71, 0.05) 66.666%,rgba(97, 97, 97, 0.05) 66.666%, rgba(97, 97, 97, 0.05) 99.999%),linear-gradient(155deg, rgba(77, 77, 77, 0.05) 0%, rgba(77, 77, 77, 0.05) 33.333%,rgba(176, 176, 176, 0.05) 33.333%, rgba(176, 176, 176, 0.05) 66.666%,rgba(114, 114, 114, 0.05) 66.666%, rgba(114, 114, 114, 0.05) 99.999%),linear-gradient(263deg, rgba(102, 102, 102, 0.05) 0%, rgba(102, 102, 102, 0.05) 33.333%,rgba(218, 218, 218, 0.05) 33.333%, rgba(218, 218, 218, 0.05) 66.666%,rgba(47, 47, 47, 0.05) 66.666%, rgba(47, 47, 47, 0.05) 99.999%),linear-gradient(247deg, rgba(46, 46, 46, 0.05) 0%, rgba(46, 46, 46, 0.05) 33.333%,rgba(144, 144, 144, 0.05) 33.333%, rgba(144, 144, 144, 0.05) 66.666%,rgba(26, 26, 26, 0.05) 66.666%, rgba(26, 26, 26, 0.05) 99.999%),linear-gradient(302deg, rgba(71, 71, 71, 0.05) 0%, rgba(71, 71, 71, 0.05) 33.333%,rgba(80, 80, 80, 0.05) 33.333%, rgba(80, 80, 80, 0.05) 66.666%,rgba(43, 43, 43, 0.05) 66.666%, rgba(43, 43, 43, 0.05) 99.999%),linear-gradient(313deg, rgba(111, 111, 111, 0.05) 0%, rgba(111, 111, 111, 0.05) 33.333%,rgba(185, 185, 185, 0.05) 33.333%, rgba(185, 185, 185, 0.05) 66.666%,rgba(61, 61, 61, 0.05) 66.666%, rgba(61, 61, 61, 0.05) 99.999%),linear-gradient(162deg, rgba(128, 128, 128, 0.05) 0%, rgba(128, 128, 128, 0.05) 33.333%,rgba(250, 250, 250, 0.05) 33.333%, rgba(250, 250, 250, 0.05) 66.666%,rgba(72, 72, 72, 0.05) 66.666%, rgba(72, 72, 72, 0.05) 99.999%),linear-gradient(90deg, rgb(199, 81, 166),rgb(241, 197, 51));
+    z-index:100000000 ;
+
+  }
+
+  .troisieme p{
+    @extend .letra;
+  }
+    
+  .quatrieme{
+    display: flex;
+    flex-direction: column;
+
+    @extend .positionRelative;
+
+    background-image: linear-gradient(149deg, rgba(85, 85, 85, 0.05) 0%, rgba(85, 85, 85, 0.05) 25%,rgba(11, 11, 11, 0.05) 25%, rgba(11, 11, 11, 0.05) 50%,rgba(182, 182, 182, 0.05) 50%, rgba(182, 182, 182, 0.05) 75%,rgba(28, 28, 28, 0.05) 75%, rgba(28, 28, 28, 0.05) 100%),linear-gradient(232deg, rgba(145, 145, 145, 0.05) 0%, rgba(145, 145, 145, 0.05) 25%,rgba(165, 165, 165, 0.05) 25%, rgba(165, 165, 165, 0.05) 50%,rgba(84, 84, 84, 0.05) 50%, rgba(84, 84, 84, 0.05) 75%,rgba(131, 131, 131, 0.05) 75%, rgba(131, 131, 131, 0.05) 100%),linear-gradient(321deg, rgba(254, 254, 254, 0.05) 0%, rgba(254, 254, 254, 0.05) 25%,rgba(249, 249, 249, 0.05) 25%, rgba(249, 249, 249, 0.05) 50%,rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.05) 75%,rgba(104, 104, 104, 0.05) 75%, rgba(104, 104, 104, 0.05) 100%),linear-gradient(90deg, rgb(21, 8, 116),rgb(111, 197, 250))
+  }
+
+  .quatrieme>p{
+    @extend .letra;
+    font-weight: inherit;
+  }
+
+  .quatrieme>section{
+    font-size: 1.5rem;
+    color:white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 2rem;
+  }
+
+  .quatrieme>section img{
+    max-width: 9rem;
+  }
+
+
+
+  .btn{
+    
+    width: 10rem;
+    height: 3rem;
+    align-self: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    background: #009688;
+    font-weight: bold;
+    color:white;
+    border: #009688;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .cinquieme{
+    display: flex;
+    flex-direction: column;
+
+    @extend .positionRelative;
+
+  }

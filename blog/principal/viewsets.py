@@ -2,58 +2,93 @@ from rest_framework import viewsets
 from .models import *
 from .serializer import *
 
-class ProductorViewSet(viewsets.ModelViewSet):
-    queryset=Productor.objects.all()
-    serializer_class=ProductorSerializer
+class productorViewSet(viewsets.ModelViewSet):
+    queryset=productor.objects.all()
+    serializer_class=productorSerializer
 
+class cantanteViewSet(viewsets.ModelViewSet):
+    queryset=cantante.objects.all()
+    serializer_class=cantanteSerializer
 
-class CantanteViewSet(viewsets.ModelViewSet):
-    queryset=Cantante.objects.all()
-    serializer_class=CantanteSerializer
+class generoViewSet(viewsets.ModelViewSet):
+    queryset=genero.objects.all()
+    serializer_class=generoSerializer
 
-class GeneroViewSet(viewsets.ModelViewSet):
-    queryset=Genero.objects.all()
-    serializer_class=GeneroSerializer
+class albumViewSet(viewsets.ModelViewSet):
+    queryset=album.objects.all()
+    serializer_class=albumSerializer  
 
-class AlbumViewSet(viewsets.ModelViewSet):
-    queryset=Album.objects.all()
-    serializer_class=AlbumSerializer    
+class cancionViewSet(viewsets.ModelViewSet):
+    queryset=cancion.objects.all()
+    serializer_class=cancionSerializer 
 
-class TemaViewSet(viewsets.ModelViewSet):
-    queryset=Tema.objects.all()
-    serializer_class=TemaSerializer
+class cancion_albumViewSet(viewsets.ModelViewSet):
+    queryset=cancion_album.objects.all()
+    serializer_class=cancion_albumSerializer
 
-class Tema_ProductorViewSet(viewsets.ModelViewSet):
-    queryset=Tema_Productor.objects.all()
-    serializer_class=Tema_ProductorSerializer    
+class cancion_generoViewSet(viewsets.ModelViewSet):
+    queryset=cancion_genero.objects.all()
+    serializer_class=cancion_generoSerializer
 
-class Tema_CantanteViewSet(viewsets.ModelViewSet):
-    queryset=Tema_Cantante.objects.all()
-    serializer_class=Tema_CantanteSerializer 
+class album_generoViewSet(viewsets.ModelViewSet):
+    queryset=album_genero.objects.all()
+    serializer_class=album_generoSerializer
 
-class Album_GeneroViewSet(viewsets.ModelViewSet):
-    queryset=Album_Genero.objects.all()
-    serializer_class=Album_GeneroSerializer  
+class productor_cancionViewSet(viewsets.ModelViewSet):
+    queryset=productor_cancion.objects.all()
+    serializer_class=productor_cancionSerializer
 
-class ClienteViewSet(viewsets.ModelViewSet):
-    queryset=Cliente.objects.all()
-    serializer_class=ClienteSerializer
+class cantante_cancionViewSet(viewsets.ModelViewSet):
+    queryset=cantante_cancion.objects.all()
+    serializer_class=cantante_cancionSerializer
 
-class RolViewSet(viewsets.ModelViewSet):
-    queryset=Rol.objects.all()
-    serializer_class=RolSerializer  
+class productor_albumViewSet(viewsets.ModelViewSet):
+    queryset=productor_album.objects.all()
+    serializer_class=productor_albumSerializer
 
-class UsuarioViewSet(viewsets.ModelViewSet):
-    queryset=Usuario.objects.all()
-    serializer_class=UsuarioSerializer  
+class cantante_albumViewSet(viewsets.ModelViewSet):
+    queryset=cantante_album.objects.all()
+    serializer_class=cantante_albumSerializer
 
-class CompraViewSet(viewsets.ModelViewSet):
-    queryset=Compra.objects.all()
-    serializer_class=CompraSerializer  
+class suscriptorViewSet(viewsets.ModelViewSet):
+    queryset=suscriptor.objects.all()
+    serializer_class=suscriptorSerializer
 
-class Detalle_CompraViewSet(viewsets.ModelViewSet):
-    queryset=Detalle_Compra.objects.all()
-    serializer_class=Detalle_CompraSerializer
+class tarjetaViewSet(viewsets.ModelViewSet):
+    queryset=tarjeta.objects.all()
+    serializer_class=tarjetaSerializer
+
+class membresiaViewSet(viewsets.ModelViewSet):
+    queryset=membresia.objects.all()
+    serializer_class=membresiaSerializer
+
+class rolViewSet(viewsets.ModelViewSet):
+    queryset=rol.objects.all()
+    serializer_class=rolSerializer  
+
+class usuarioViewSet(viewsets.ModelViewSet):
+    queryset=usuario.objects.all()
+    serializer_class=usuarioSerializer  
+
+class playlistViewSet(viewsets.ModelViewSet):
+    queryset=playlist.objects.all()
+    serializer_class=playlistSerializer
+
+class playlist_cancionViewSet(viewsets.ModelViewSet):
+    queryset=playlist_cancion.objects.all()
+    serializer_class=playlist_cancionSerializer
+
+class playlist_albumViewSet(viewsets.ModelViewSet):
+    queryset=playlist_album.objects.all()
+    serializer_class=playlist_albumSerializer
+
+class compraViewSet(viewsets.ModelViewSet):
+    queryset=compra.objects.all()
+    serializer_class=compraSerializer  
+
+class compra_usuarioViewSet(viewsets.ModelViewSet):
+    queryset=compra_usuario.objects.all()
+    serializer_class=compra_usuarioSerializer
 
 
 
