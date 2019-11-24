@@ -11,15 +11,27 @@
           Nosotros amamos la música, 
           y creamos esta pagina para que 
           vos la disfrutes tanto como nosotros, 
-          al final esto es lo que mueve al mundo. ¡Que disfrutes!</p>
+          al final esto es lo que mueve al mundo. ¡Que disfrutes!
+          </p>
     </div>
 
     <div class='quatrieme'>
       <p>Trending</p>
-      <section>
-        <p>Destacados</p>
+      <div class="musica">
+        <section>
+        <p  >Destacados</p>
         <img src="https://images-na.ssl-images-amazon.com/images/I/71k-5WHYB9L._SX342_.jpg" alt="">
       </section>
+       <section>
+        <p  >Destacados</p>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/71k-5WHYB9L._SX342_.jpg" alt="">
+      </section>
+       <section>
+        <p  >Destacados</p>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/71k-5WHYB9L._SX342_.jpg" alt="">
+      </section>
+      
+      </div>
       <button class="btn">
       Pruébalo ahora
     </button> 

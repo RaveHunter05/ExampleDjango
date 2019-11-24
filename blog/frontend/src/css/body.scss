@@ -37,7 +37,7 @@
 
     color:white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 2rem;
+    font-size: 1.9rem;
     z-index: 100000000000000;
     text-align: center;
     }
@@ -59,30 +59,57 @@
 
   .troisieme p{
     @extend .letra;
+    font-size: 1.89rem;
+    max-width: 60rem;
+    text-shadow: 0px 6px 6px rgba(0,0,0,0.2);
+  }
+  
+  .troisieme h2{
+
   }
     
   .quatrieme{
     display: flex;
     flex-direction: column;
-
+  
     @extend .positionRelative;
+    justify-content: space-between;
+    background-image: linear-gradient(149deg, rgba(85, 85, 85, 0.05) 0%, rgba(85, 85, 85, 0.05) 25%,rgba(11, 11, 11, 0.05) 25%, rgba(11, 11, 11, 0.05) 50%,rgba(182, 182, 182, 0.05) 50%, rgba(182, 182, 182, 0.05) 75%,rgba(28, 28, 28, 0.05) 75%, rgba(28, 28, 28, 0.05) 100%),linear-gradient(232deg, rgba(145, 145, 145, 0.05) 0%, rgba(145, 145, 145, 0.05) 25%,rgba(165, 165, 165, 0.05) 25%, rgba(165, 165, 165, 0.05) 50%,rgba(84, 84, 84, 0.05) 50%, rgba(84, 84, 84, 0.05) 75%,rgba(131, 131, 131, 0.05) 75%, rgba(131, 131, 131, 0.05) 100%),linear-gradient(321deg, rgba(254, 254, 254, 0.05) 0%, rgba(254, 254, 254, 0.05) 25%,rgba(249, 249, 249, 0.05) 25%, rgba(249, 249, 249, 0.05) 50%,rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.05) 75%,rgba(104, 104, 104, 0.05) 75%, rgba(104, 104, 104, 0.05) 100%),linear-gradient(90deg, rgb(21, 8, 116),rgb(111, 197, 250));
 
-    background-image: linear-gradient(149deg, rgba(85, 85, 85, 0.05) 0%, rgba(85, 85, 85, 0.05) 25%,rgba(11, 11, 11, 0.05) 25%, rgba(11, 11, 11, 0.05) 50%,rgba(182, 182, 182, 0.05) 50%, rgba(182, 182, 182, 0.05) 75%,rgba(28, 28, 28, 0.05) 75%, rgba(28, 28, 28, 0.05) 100%),linear-gradient(232deg, rgba(145, 145, 145, 0.05) 0%, rgba(145, 145, 145, 0.05) 25%,rgba(165, 165, 165, 0.05) 25%, rgba(165, 165, 165, 0.05) 50%,rgba(84, 84, 84, 0.05) 50%, rgba(84, 84, 84, 0.05) 75%,rgba(131, 131, 131, 0.05) 75%, rgba(131, 131, 131, 0.05) 100%),linear-gradient(321deg, rgba(254, 254, 254, 0.05) 0%, rgba(254, 254, 254, 0.05) 25%,rgba(249, 249, 249, 0.05) 25%, rgba(249, 249, 249, 0.05) 50%,rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.05) 75%,rgba(104, 104, 104, 0.05) 75%, rgba(104, 104, 104, 0.05) 100%),linear-gradient(90deg, rgb(21, 8, 116),rgb(111, 197, 250))
   }
 
   .quatrieme>p{
     @extend .letra;
-    font-weight: inherit;
+    font-size: 1.7rem;
+    text-shadow: 0px 6px 6px rgba(0,0,0,0.2); 
+    font-weight: bold;
+
   }
 
-  .quatrieme>section{
+  .horizontalMargin{
+    margin-left: 3rem;    
+    margin-right: 3rem;
+
+  }
+
+  .musica{
+    max-height: 60vh;
+    overflow: scroll;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.4);  
+    @extend .horizontalMargin;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+
+  .musica>section{
     font-size: 1.5rem;
     color:white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-left: 2rem;
   }
 
-  .quatrieme>section img{
+  .musica>section img{
     max-width: 9rem;
   }
 
@@ -90,7 +117,7 @@
 
   .btn{
     
-    width: 10rem;
+    width: 10 rem;
     height: 3rem;
     align-self: center;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -100,6 +127,7 @@
     color:white;
     border: #009688;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 2rem;  
   }
 
   .cinquieme{
