@@ -42,7 +42,9 @@
 </template>
 
 <script>
-import Beneficios from './Beneficios.vue'
+import Beneficios from './Beneficios.vue';
+
+
 export default {
   name: 'Body',
   components:{

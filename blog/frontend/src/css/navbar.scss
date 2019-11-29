@@ -12,9 +12,14 @@
     z-index:10000000000;
 }
 
-.navbar h2{
+.h2{
     margin-left:3rem;
-    
+    color: white;
+    text-decoration: none;
+}
+
+router-link{
+    text-decoration: none;
 }
 
 .derechaNavBar{
@@ -25,6 +30,15 @@
 
 .derechaNavBar ul{
     display:flex;
+    height: 100%;
+}
+
+.izquierdaNavBar{
+    height: 100%;
+}
+
+.izquierdaNavBar:hover{
+    cursor: pointer;
 }
 
 .derechaNavBar li{
@@ -32,4 +46,9 @@
     margin-left: 3rem;
     margin-right: 3rem;
     align-self: center;
+
+}
+
+.derechaNavBar ul:hover{
+    cursor: pointer;
 }

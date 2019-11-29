@@ -55,7 +55,7 @@
           <td>X</td>
         </tr>
         <tr>
-          <td>asdf</td>
+          <td>Gráficar en R4</td>
           <td>X</td>
           <td>X</td>
           <td>X</td>
