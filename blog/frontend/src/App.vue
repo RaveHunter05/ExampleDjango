@@ -1,8 +1,11 @@
 <template>
-  <div id="app" class="page-container" @actualizar="alert('puto el que lea')">
-
-    <Navbar v-if="tipoDeNav==0" @clicked='onClickChild($event)'/>
-    <Navbar2 v-if="tipoDeNav==1" @clicked2='onClickChild($event)'/>
+  <div id="app" class="page-container">
+    <div v-if="this.$route.path=='/'">
+      <Navbar v-if="tipoDeNav==0" @clicked='onClickChild($event)'/>
+    </div>
+    <div v-else-if="this.$route.path!='/'">
+      <Navbar2 @clicked2='onClickChild($event)'/>
+    </div>
     <router-view> </router-view>
     <Footer/>
   </div>

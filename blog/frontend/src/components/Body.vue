@@ -5,6 +5,7 @@
     </div>
     <div class="secondaire">
         <p>"La música es el alimento del alma"</p>
+        <p>-Arthur Schopenhauer</p>
     </div>
     <div class="troisieme">
         <p>
