@@ -8,6 +8,7 @@
     </div>
     <router-view> </router-view>
     <Footer/>
+    <Play/>
   </div>
 </template>
 
@@ -17,6 +18,7 @@
 import Footer from './components/Footer.vue';
 import Navbar from './components/Navbar.vue';
 import Navbar2 from './components/Navbar2.vue';
+import Play from './components/Play.vue';
 
 export default {
   name: 'app',
@@ -28,7 +30,8 @@ export default {
   components: {
     Navbar,
     Footer,
-    Navbar2
+    Navbar2,
+    Play
   },
   methods:{
     onClickChild (value) {
