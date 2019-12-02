@@ -8,7 +8,7 @@
     </div>
     <router-view> </router-view>
     <Footer/>
-    <Play/>
+    <Play v-if="this.$route.path=='/body2'"/>
   </div>
 </template>
 
