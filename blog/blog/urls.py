@@ -19,6 +19,7 @@ from principal.views import post_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', post_list)
+    path('', post_list),
+    path('api/v1.0/', include('principal.urls')) 
 
 ]

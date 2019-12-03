@@ -3,7 +3,6 @@ from django.utils import timezone
 
 # Create your models here.
 
-
 class Post(models.Model):
     author=models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title=models.CharField(max_length=200)
@@ -20,87 +19,174 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-#---------------------------------------- Personas, Temas, Album ---------------------------------
+#---------------------------------------- Artistas, Canciones, Álbumes, ---------------------------------
     
-class Productor(models.Model):
-    Nombre=models.CharField(max_length=50)
-    Apellido=models.CharField(max_length=50)
-    Nombre_artistico=models.CharField(max_length=50)
+class productor(models.Model):
+    foto=models.ImageField(upload_to='pic_folder/')
+    portada=models.ImageField(upload_to='pic_folder/')
+    primer_nombre=models.CharField(max_length=50)
+    primer_apellido=models.CharField(max_length=50)
+    nombre_artistico=models.CharField(max_length=50)
+    bio=models.TextField(blank=True)
 
-class Cantante(models.Model):
-    Nombre=models.CharField(max_length=50)
-    Apellido=models.CharField(max_length=50)
-    Nombre_artistico=models.CharField(max_length=50)
+    def __str__(self):
+        return self.nombre_artistico
 
-class Genero(models.Model):
-    Nombre=models.CharField(max_length=30)
-    Descripcion=models.TextField(blank=True)
+class cantante(models.Model):
+    foto=models.ImageField(upload_to='pic_folder/')
+    portada=models.ImageField(upload_to='pic_folder/')
+    primer_nombre=models.CharField(max_length=50)
+    primer_apellido=models.CharField(max_length=50)
+    nombre_artistico=models.CharField(max_length=50)
+    bio=models.TextField(blank=True)
 
-class Album(models.Model):
-    Nombre=models.CharField(max_length=60)
-    Tipo_album=models.CharField(max_length=30)
-    Fecha_lanzamiento=models.DateField(auto_now=True)
-    '''Duracion=models.                     Investigar tipo de campo para manejar 
-                                                        los tiempos hh//mm//ss
-    '''
-    Estrellas=models.IntegerField() #Validar valor maximo entre 1-5
+    def __str__(self):
+        return self.nombre_artistico
 
-class Tema(models.Model):
-    Genero=models.ForeignKey(Genero, on_delete=models.CASCADE)
-    Album=models.ForeignKey(Album, on_delete=models.CASCADE)
-    Titulo=models.CharField(max_length=60)
-    '''Duracion=models.                     Investigar tipo de campo para manejar 
-                                                        los tiempos hh//mm//ss
-    '''
-    Estrellas=models.IntegerField() #Validar valor maximo entre 1-5
-    Fecha_lanzamiento=models.DateField(auto_now=True)
-    Precio=models.DecimalField(max_digits=10, decimal_places=2)
+class genero(models.Model):
+    nombre=models.CharField(max_length=50)
+    descripcion=models.TextField(blank=True)
 
-class Tema_Productor(models.Model):
-    Productor=models.ForeignKey(Productor, on_delete=models.CASCADE)
-    Tema=models.ForeignKey(Tema, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.nombre
 
-class Tema_Cantante(models.Model):
-    Cantante=models.ForeignKey(Cantante, on_delete=models.CASCADE)
-    Tema=models.ForeignKey(Tema, on_delete=models.CASCADE)
+class album(models.Model):
+    caratula=models.ImageField(upload_to='pic_folder/')
+    titulo=models.CharField(max_length=50)
+    corazon=models.BooleanField(default=False)
+    tipo=models.CharField(max_length=40)
+    fecha_lanzamiento=models.DateField(auto_now_add=True)
+    duracion=models.TimeField()
+    descripcion=models.TextField(blank=True)
 
-class Album_Genero(models.Model):
-    Album=models.ForeignKey(Album, on_delete=models.CASCADE)
-    Genero=models.ForeignKey(Genero, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.titulo
 
-#------------------------------------------ Login y Autenticación -------------------------------------
+class cancion(models.Model):
+    caratula=models.ImageField(upload_to='pic_folder/')
+    titulo=models.CharField(max_length=50)
+    corazon=models.BooleanField(default=False)
+    duracion=models.TimeField()
+    fecha_lanzamiento=models.DateField(auto_now_add=True)
 
-class Cliente(models.Model):
-    Nombre=models.CharField(max_length=50)
-    Apellido=models.CharField(max_length=50)
+    def __str__(self):
+        return self.titulo
 
-class Rol(models.Model):
-    Descripcion=models.CharField
+class cancion_album(models.Model):
+    cancion=models.ForeignKey(cancion, blank=True, null=True, on_delete=models.SET_NULL)
+    album=models.ForeignKey(album, blank=True, null=True, on_delete=models.SET_NULL)
 
-class Usuario(models.Model):
-    Rol=models.ForeignKey(Rol,on_delete=models.CASCADE)
-    Cliente=models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    Nombre_Usuario=models.CharField(max_length=50)
-    Contraseña=models.CharField(max_length=128)
-    Correo=models.EmailField(unique=True)
-    Estado=models.BooleanField(default=True)
+class cancion_genero(models.Model):
+    cancion=models.ForeignKey(cancion, blank=True, null=True, on_delete=models.SET_NULL)
+    genero=models.ForeignKey(genero, blank=True, null=True, on_delete=models.SET_NULL)
 
+class album_genero(models.Model):
+    album=models.ForeignKey(album, blank=True, null=True, on_delete=models.SET_NULL)
+    genero=models.ForeignKey(genero, blank=True, null=True, on_delete=models.SET_NULL)
 
-#------------------------------------ Venta de temas ---------------------------------------------------
+class productor_cancion(models.Model):
+    productor=models.ForeignKey(productor, blank=True, null=True, on_delete=models.SET_NULL)
+    cancion=models.ForeignKey(cancion, blank=True, null=True, on_delete=models.SET_NULL)
 
-class Compra(models.Model):
-    Cliente=models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    Fecha_realizacion=models.DateField(auto_now=True)
-    Concepto=models.TextField(blank=True)
-    Monto=models.DecimalField(max_digits=10,decimal_places=2)
+class cantante_cancion(models.Model):
+    cantante=models.ForeignKey(cantante, blank=True, null=True, on_delete=models.SET_NULL)
+    cancion=models.ForeignKey(cancion, blank=True, null=True, on_delete=models.SET_NULL)
 
-class Detalle_Compra(models.Model):
-    Compra=models.ForeignKey(Compra, on_delete=models.CASCADE)
-    Tema=models.ForeignKey(Tema, on_delete=models.CASCADE)
-    Album=models.ForeignKey(Album, on_delete=models.CASCADE)
-    Fecha_realizacion=models.DateField(auto_now=True)
-    Cantidad=models.PositiveIntegerField()
-    Precio=models.DecimalField(max_digits=10,decimal_places=2)
+class productor_album(models.Model):
+    productor=models.ForeignKey(productor, blank=True, null=True, on_delete=models.SET_NULL)
+    album=models.ForeignKey(album, blank=True, null=True, on_delete=models.SET_NULL)
+
+class cantante_album(models.Model):
+    cantante=models.ForeignKey(cantante, blank=True, null=True, on_delete=models.SET_NULL)
+    album=models.ForeignKey(album, blank=True, null=True, on_delete=models.SET_NULL)
+
+#------------------------------------------ Login, Autenticación, Suscriptor, Tarjeta, Playlist -------------------------------------
+
+class suscriptor(models.Model):
+    primer_nombre=models.CharField(max_length=50)
+    primer_apellido=models.CharField(max_length=50)
+    pais_ubicacion=models.CharField(max_length=50)
+    fecha_nacimiento=models.DateField()
+    telefono=models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.primer_nombre
+
+class tarjeta(models.Model):
+    suscriptor=models.ForeignKey(suscriptor, blank=True, null=True, on_delete=models.SET_NULL)
+    numero_tarjeta=models.CharField(max_length=150, unique=True) #Ver posibilidad de aplicar hash, salt or pepper
+    tipo=models.CharField(max_length=30)
+    fecha_emision=models.DateField()
+    fecha_vencimiento=models.DateField()
+
+    def __str__(self):
+        return self.numero_tarjeta
+
+class membresia(models.Model):
+    titulo=models.CharField(max_length=30)
+    descripcion=models.TextField(blank=True)
+    precio=models.DecimalField(max_digits=4, decimal_places=2)
+    estado=models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.titulo
+
+class rol(models.Model):
+    nombre=models.CharField(max_length=50)
+    descripcion=models.TextField(blank=True)
+
+    def __str__(self):
+        return self.nombre
+
+class usuario(models.Model):
+    rol=models.ForeignKey(rol, blank=True, null=True, on_delete=models.SET_NULL)
+    suscriptor=models.ForeignKey(suscriptor, blank=True, null=True, on_delete=models.SET_NULL)
+    foto=models.ImageField(upload_to='pic_folder/')
+    portada=models.ImageField(upload_to='pic_folder/')
+    nombre_usuario=models.CharField(max_length=50, unique=True)
+    nickname=models.CharField(max_length=50) #agregado nickname, Baldor
+    contraseña=models.CharField(max_length=150) #Ver posibilidad de aplicar hash, salt or pepper
+    correo=models.EmailField(unique=True)
+    premium=models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.nombre_usuario
+
+class playlist(models.Model):
+    # --> Usuarios no pueden agregar carátulas a las playlists  <-- Importante
+    usuario=models.ForeignKey(usuario, blank=True, null=True, on_delete=models.SET_NULL)
+    titulo=models.CharField(max_length=50)
+    corazon=models.BooleanField(default=False)
+    fecha_creacion=models.DateField(auto_now_add=True)
+    fecha_modificacion=models.DateField(auto_now=True) # --> Verificar uso de auto_now ó auto_now_add para modificaciones en registros
+    duracion=models.TimeField()
+    descripcion=models.TextField(blank=True)
+
+    def __str__(self):
+        return self.titulo
+
+class playlist_cancion(models.Model):
+    playlist=models.ForeignKey(playlist, blank=True, null=True, on_delete=models.SET_NULL)
+    cancion_album=models.ForeignKey(cancion_album, blank=True, null=True, on_delete=models.SET_NULL)
+
+class playlist_album(models.Model):
+    playlist=models.ForeignKey(playlist, blank=True, null=True, on_delete=models.SET_NULL)
+    album=models.ForeignKey(album, blank=True, null=True, on_delete=models.SET_NULL)
+
+#------------------------------------ Adquisición de suscripción premium ---------------------------------------------------
+
+class compra(models.Model):
+    membresia=models.ForeignKey(membresia, blank=True, null=True, on_delete=models.SET_NULL)
+    usuario=models.ForeignKey(usuario, blank=True, null=True, on_delete=models.SET_NULL)
+    concepto=models.TextField(blank=True)
+    monto=models.DecimalField(max_digits=4, decimal_places=2)
+    fecha_compra=models.DateField(auto_now_add=True)
+    descuento=models.DecimalField(max_digits=2, decimal_places=2)
+
+class compra_usuario(models.Model):
+    compra=models.ForeignKey(compra, blank=True, null=True, on_delete=models.SET_NULL)
+    usuario=models.ForeignKey(usuario, blank=True, null=True, on_delete=models.SET_NULL)
+    fecha_expiracion=models.DateField()
 
 
 

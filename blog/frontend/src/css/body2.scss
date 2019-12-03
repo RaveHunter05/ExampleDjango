@@ -1,0 +1,145 @@
+.body{
+    background: #0B0B0B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-bottom: 3.5rem;
+}
+
+.busqueda{
+    margin-top: 7.5rem;
+    margin-bottom: 1rem;
+}
+
+section{
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.imagen{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 15px;
+}
+
+.busqueda{
+    width: 45rem;
+    border: none;
+    border-bottom: 1px solid #4E4E4E;
+    background: #0B0B0B;
+    color: #C8C8C8;
+}
+
+.busqueda::placeholder{
+    color: #c1c1c1;
+    font-size: 1rem;
+} 
+
+section{
+    margin-top: 1rem;
+}
+
+.section{
+    text-align: left;
+    width: 90%;
+}
+
+.destacados{
+    display: flex;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.album{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-right: 3rem;
+    cursor: pointer;
+}
+
+.album label{
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.artistas img{
+    border-radius: 50%;
+}
+
+.buscador{
+    position: fixed;
+    background-color: #1C1C1C;
+    border: 2px solid #07371D;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: space-around;
+    z-index: 1500;
+    width: 30rem;
+    border-radius: 40px;
+    align-self: center;
+    height: 28rem;
+    top: 50%;
+    margin-top: -16.5rem;
+    padding: 2rem;
+    text-align: center;
+    
+}
+
+.buscador img{
+    max-width: 15rem;
+}
+.buscador label{
+    margin-bottom: 2rem;
+}
+
+.iconos{
+    width: 22rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;    
+    align-items: center;
+}
+
+.play{
+    font-size: 2rem;
+    cursor: pointer;    
+}
+
+.noplay{
+    color: #6C6C6C;
+    cursor: pointer;    
+}
+
+.back{
+    font-size: 2rem;
+    position: absolute;
+    left: 0;
+    top: 0; 
+    margin-top: 2.5rem;
+    margin-left: 2.5rem;
+    cursor: pointer;    
+}
+
+.cancion{
+    color: #FDFDFD;
+}
+
+.artista{
+    color: #F8F8F8;
+}
+
+.album1{
+    color:#CECECE;
+}
+
+.pointer{
+    cursor:pointer;
+}
+
