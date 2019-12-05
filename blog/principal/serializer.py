@@ -4,7 +4,8 @@ from rest_framework import serializers
 class productorSerializer(serializers.ModelSerializer):
     class Meta:
         model=productor
-        fields='__all__'
+        fields=('foto','portada','primer_nombre',
+        'primer_apellido','nombre_artistico','bio')
         
 class cantanteSerializer(serializers.ModelSerializer):
     class Meta:
@@ -27,9 +28,11 @@ class cancionSerializer(serializers.ModelSerializer):
         fields='__all__'
 
 class cancion_albumSerializer(serializers.ModelSerializer):
+    cancion=cancionSerializer()
+    album=albumSerializer()
     class Meta:
-        models=cancion_album
-        fields='__all__'
+        model=cancion_album
+        fields=('cancion','album')
 
 class cancion_generoSerializer(serializers.ModelSerializer):
     class Meta:
