@@ -28,6 +28,11 @@ class cancionSerializer(serializers.ModelSerializer):
         fields='__all__'
 
 class cancion_albumSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=cancion_album
+        fields='__all__'
+
+class cancion_album_mixin_serializer(serializers.ModelSerializer):
     cancion=cancionSerializer()
     album=albumSerializer()
     class Meta:
@@ -39,30 +44,72 @@ class cancion_generoSerializer(serializers.ModelSerializer):
         model=cancion_genero
         fields='__all__'
 
+class cancion_genero_mixin_serializer(serializers.ModelSerializer):
+    cancion=cancionSerializer()
+    genero=generoSerializer()
+    class Meta:
+        model=cancion_genero
+        fields=('cancion','genero')
+
 class album_generoSerializer(serializers.ModelSerializer):
     class Meta:
         model=album_genero
         fields='__all__'
+
+class album_genero_mixin_serializer(serializers.ModelSerializer):
+    album=albumSerializer()
+    genero=generoSerializer()
+    class Meta:
+        model=album_genero
+        fields=('album','genero')
 
 class productor_cancionSerializer(serializers.ModelSerializer):
     class Meta:
         model=productor_cancion
         fields='__all__'
 
+class productor_cancion_mixin_serializer(serializers.ModelSerializer):
+    productor=productorSerializer()
+    cancion=cancionSerializer()
+    class Meta:
+        model=productor_cancion
+        fields=('productor','cancion')
+
 class cantante_cancionSerializer(serializers.ModelSerializer):
     class Meta:
         model=cantante_cancion
         fields='__all__'
+
+class cantante_cancion_mixin_serializer(serializers.ModelSerializer):
+    cantante=cantanteSerializer()
+    cancion=cancionSerializer()
+    class Meta:
+        model=cantante_cancion
+        fields=('cantante','cancion')
 
 class productor_albumSerializer(serializers.ModelSerializer):
     class Meta:
         model=productor_album
         fields='__all__'
 
+class productor_album_mixin_serializer(serializers.ModelSerializer):
+    productor=productorSerializer()
+    album=albumSerializer()
+    class Meta:
+        model=productor_album
+        fields=('productor','album')
+
 class cantante_albumSerializer(serializers.ModelSerializer):
     class Meta:
         model=cantante_album
         fields='__all__'
+
+class cantante_album_mixin_serializer(serializers.ModelSerializer):
+    cantante=cantanteSerializer()
+    album=albumSerializer()
+    class Meta:
+        model=cantante_album
+        fields=('cantante','album')
 
 class suscriptorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -99,10 +146,27 @@ class playlist_cancionSerializer(serializers.ModelSerializer):
         model=playlist_cancion   
         fields='__all__'    
 
+class playlist_cancion_mixin_serializer(serializers.ModelSerializer):
+    playlist=playlistSerializer()
+    cancion_album=cancion_album_mixin_serializer()
+    class Meta:
+        model=playlist_cancion   
+        fields=('playlist','cancion_album')  
+
+        # componer esto  
+
+
 class playlist_albumSerializer(serializers.ModelSerializer):
     class Meta:
         model=playlist_album
         fields='__all__'                 
+
+class playlist_album_mixin_serializer(serializers.ModelSerializer):
+    playlist=playlistSerializer()
+    album=albumSerializer()
+    class Meta:
+        model=playlist_album
+        fields=('playlist','album')   
 
 class compraSerializer(serializers.ModelSerializer):
     class Meta:
@@ -112,4 +176,11 @@ class compraSerializer(serializers.ModelSerializer):
 class compra_usuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model=compra_usuario
-        fields='__all__'        
+        fields='__all__'       
+
+class compra_usuario_mixin_serializer(serializers.ModelSerializer):
+    compra=compraSerializer()
+    usuario=usuarioSerializer()
+    class Meta:
+        model=compra_usuario
+        fields=('compra','usuario')       

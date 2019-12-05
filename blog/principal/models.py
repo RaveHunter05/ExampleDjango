@@ -182,11 +182,14 @@ class compra(models.Model):
     monto=models.DecimalField(max_digits=4, decimal_places=2)
     fecha_compra=models.DateField(auto_now_add=True)
     descuento=models.DecimalField(max_digits=2, decimal_places=2)
+    # monto deberia ser un campo calculado, por tanto nulo
 
 class compra_usuario(models.Model):
     compra=models.ForeignKey(compra, blank=True, null=True, on_delete=models.SET_NULL)
     usuario=models.ForeignKey(usuario, blank=True, null=True, on_delete=models.SET_NULL)
     fecha_expiracion=models.DateField()
+    # fecha de expiracion es otro campo calculado, por tanto deberia ser nulo
+
 
 
 

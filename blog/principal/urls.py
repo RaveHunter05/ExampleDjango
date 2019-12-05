@@ -24,5 +24,22 @@ router.register('playlist_cancion', playlist_cancionViewSet),
 router.register('playlist_album', playlist_albumViewSet),
 router.register('compra', compraViewSet),
 router.register('compra_usuario', compra_usuarioViewSet),
+router.register('cancion_album_mixin', cancion_album_mixin_viewset)
+router.register('cancion_genero_mixin', cancion_genero_mixin_viewset)
+router.register('album_genero_mixin', album_genero_mixin_viewset)
+router.register('productor_cancion_mixin', productor_cancion_mixin_viewset)
+router.register('cantante_cancion_mixin', cantante_cancion_mixin_viewset)
+router.register('productor_album_mixin', productor_album_mixin_viewset)
+router.register('cantante_album_mixin', cantante_album_mixin_viewset)
+router.register('playlist_cancion_mixin', playlist_cancion_mixin_viewset)
+router.register('compra_usuario_mixin', compra_usuario_mixin_viewset),
+router.register('playlist_album_mixin', playlist_album_mixin_viewset),
+
+
+
+
+
+
+
 
 urlpatterns = router.urls
