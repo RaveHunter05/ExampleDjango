@@ -11,7 +11,6 @@
             Reproducir aleatoriamente
           </button>
           <i class="far fa-heart pointer"></i>
-          <h2>s;ldfkjgl;sjdf;lkgjsd;lgjs;ldkfg;lkj</h2>
         </div>
       </div>
       <div class="tableArtistas">
