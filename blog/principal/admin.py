@@ -5,4 +5,5 @@ from .models import *
 
 admin.site.register(Post)
 admin.site.register(productor)
+admin.site.register(cantante)
 

@@ -22,8 +22,8 @@ class Post(models.Model):
 #---------------------------------------- Artistas, Canciones, Álbumes, ---------------------------------
     
 class productor(models.Model):
-    foto=models.ImageField(upload_to='pic_folder/')
-    portada=models.ImageField(upload_to='pic_folder/')
+    foto=models.ImageField(upload_to='pic_folder/', blank=True)
+    portada=models.ImageField(upload_to='pic_folder/' , blank=True)
     primer_nombre=models.CharField(max_length=50)
     primer_apellido=models.CharField(max_length=50)
     nombre_artistico=models.CharField(max_length=50)
@@ -33,8 +33,8 @@ class productor(models.Model):
         return self.nombre_artistico
 
 class cantante(models.Model):
-    foto=models.ImageField(upload_to='pic_folder/')
-    portada=models.ImageField(upload_to='pic_folder/')
+    foto=models.ImageField(upload_to='pic_folder/' , blank=True)
+    portada=models.ImageField(upload_to='pic_folder/' , blank=True)
     primer_nombre=models.CharField(max_length=50)
     primer_apellido=models.CharField(max_length=50)
     nombre_artistico=models.CharField(max_length=50)
@@ -63,11 +63,12 @@ class album(models.Model):
         return self.titulo
 
 class cancion(models.Model):
-    caratula=models.ImageField(upload_to='pic_folder/')
+    caratula=models.ImageField(upload_to='pic_folder/' , blank=True)
     titulo=models.CharField(max_length=50)
     corazon=models.BooleanField(default=False)
     duracion=models.TimeField()
     fecha_lanzamiento=models.DateField(auto_now_add=True)
+    sonido=models.FileField(upload_to='musica/', blank=True)
 
     def __str__(self):
         return self.titulo
@@ -141,8 +142,8 @@ class rol(models.Model):
 class usuario(models.Model):
     rol=models.ForeignKey(rol, blank=True, null=True, on_delete=models.SET_NULL)
     suscriptor=models.ForeignKey(suscriptor, blank=True, null=True, on_delete=models.SET_NULL)
-    foto=models.ImageField(upload_to='pic_folder/')
-    portada=models.ImageField(upload_to='pic_folder/')
+    foto=models.ImageField(upload_to='pic_folder/' , blank=True)
+    portada=models.ImageField(upload_to='pic_folder/', blank=True)
     nombre_usuario=models.CharField(max_length=50, unique=True)
     nickname=models.CharField(max_length=50) #agregado nickname, Baldor
     contraseña=models.CharField(max_length=150) #Ver posibilidad de aplicar hash, salt or pepper
