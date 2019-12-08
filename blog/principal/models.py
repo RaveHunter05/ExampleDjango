@@ -158,6 +158,7 @@ class playlist(models.Model):
     usuario=models.ForeignKey(usuario, blank=True, null=True, on_delete=models.SET_NULL)
     titulo=models.CharField(max_length=50)
     corazon=models.BooleanField(default=False)
+    caratula=models.ImageField(upload_to='pic_folder/', blank=True)
     fecha_creacion=models.DateField(auto_now_add=True)
     fecha_modificacion=models.DateField(auto_now=True) # --> Verificar uso de auto_now ó auto_now_add para modificaciones en registros
     duracion=models.TimeField()
