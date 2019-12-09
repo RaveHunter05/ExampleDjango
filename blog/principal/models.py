@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from datetime import datetime
 
 # Create your models here.
 
@@ -55,8 +56,8 @@ class album(models.Model):
     titulo=models.CharField(max_length=50)
     corazon=models.BooleanField(default=False)
     tipo=models.CharField(max_length=40)
-    fecha_lanzamiento=models.DateField(auto_now_add=True)
-    duracion=models.TimeField()
+    fecha_lanzamiento=models.DateField(null=False)
+    duracion=models.TimeField(null=False)
     descripcion=models.TextField(blank=True)
 
     def __str__(self):
@@ -154,14 +155,14 @@ class usuario(models.Model):
         return self.nombre_usuario
 
 class playlist(models.Model):
-    # --> Usuarios no pueden agregar carátulas a las playlists  <-- Importante
+
     usuario=models.ForeignKey(usuario, blank=True, null=True, on_delete=models.SET_NULL)
     titulo=models.CharField(max_length=50)
     corazon=models.BooleanField(default=False)
     caratula=models.ImageField(upload_to='pic_folder/', blank=True)
-    fecha_creacion=models.DateField(auto_now_add=True)
-    fecha_modificacion=models.DateField(auto_now=True) # --> Verificar uso de auto_now ó auto_now_add para modificaciones en registros
-    duracion=models.TimeField()
+    fecha_creacion=models.DateField(null=False)
+    fecha_modificacion=models.DateField(auto_now_add=True) # --> Verificar uso de auto_now ó auto_now_add para modificaciones en registros
+    duracion=models.TimeField(default=datetime.now)
     descripcion=models.TextField(blank=True)
 
     def __str__(self):

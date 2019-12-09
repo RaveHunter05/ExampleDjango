@@ -8,12 +8,13 @@
         <p>-Arthur Schopenhauer</p>
     </div>
     <div class="troisieme">
-        <p>
+        <!-- <p>
           Nosotros amamos la música, 
           y creamos esta pagina para que 
           vos la disfrutes tanto como nosotros, 
           al final esto es lo que mueve al mundo. ¡Que disfrutes!
-          </p>
+          </p> -->
+          {{this.items}}
     </div>
 
     <div class='quatrieme'>
@@ -59,7 +60,7 @@ export default {
   props: {
   },
   created(){
-    fetch('https://jsonplaceholder.typicode.com/posts/1/comments')
+    fetch('https://pokeapi.co/api/v2/ability/10/')
   .then(response => response.json())
   .then(json => this.items=json)
   }
