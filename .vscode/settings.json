@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\Socrates\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "python.pythonPath": "myvenv/bin/python",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true
 }

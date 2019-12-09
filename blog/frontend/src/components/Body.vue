@@ -14,7 +14,7 @@
           vos la disfrutes tanto como nosotros, 
           al final esto es lo que mueve al mundo. ¡Que disfrutes!
           </p> -->
-          {{this.items}}
+        <p><audio :src="this.items.sonido" controls="controls">Esto no acepta audio</audio></p>
     </div>
 
     <div class='quatrieme'>
@@ -60,7 +60,7 @@ export default {
   props: {
   },
   created(){
-    fetch('https://pokeapi.co/api/v2/ability/10/')
+    fetch('http://127.0.0.1:8000/api/v1.0/cancion/3/')
   .then(response => response.json())
   .then(json => this.items=json)
   }
