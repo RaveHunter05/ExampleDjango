@@ -3,7 +3,7 @@
     <div class="login">
     <h2>Login</h2>
     <input type="text" placeholder="Usuario">
-    <input type="text" placeholder="contraseña">
+    <input type="password" placeholder="contraseña">
     <div class="registrar">
       <a href="">¿Olvidaste tu contraseña?</a>
     </div>

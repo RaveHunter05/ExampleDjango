@@ -17,15 +17,20 @@ export default new Router({
         },
         {
             path:'/body2',
+            name:'body2',
             component:Body2
         },
         {
             path:'/artista',
-            component:Artista
+            name:'artista',
+            component:Artista,
+            props:true
         },
         {
             path:'/album',
-            component:Album
+            name:'album',
+            component:Album,
+            props:true
         },
         {
             path:'/usuario',
@@ -33,7 +38,9 @@ export default new Router({
         },
         {
             path:'/playlist',
-            component:Playlist
+            name:'playlist',
+            component:Playlist,
+            props:true
         }
     ]
 })
