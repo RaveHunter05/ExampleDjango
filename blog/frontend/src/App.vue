@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="page-container">
     <div v-if="this.$route.path=='/'">
-      <Navbar v-if="tipoDeNav==0" @clicked='onClickChild($event)'/>
+      <Navbar v-if="tipoDeNav==0" />
     </div>
     <div v-else-if="this.$route.path!='/'">
-      <Navbar2 @clicked2='onClickChild($event)'/>
+      <Navbar2 />
     </div>
     <router-view> </router-view>
     <Footer/>
