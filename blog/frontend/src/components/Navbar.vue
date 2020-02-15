@@ -15,7 +15,7 @@
       </nav>
   </div>
   <div v-if="login==true">
-      <Login @actualizar='cambioNav($event)'/>
+      <Login />
   </div>
 
   <div v-if="register==true">
@@ -53,9 +53,9 @@ export default {
             }
             this.register=!this.register;
         },
-        cambioNav(value){
-            this.$emit('clicked',value)
-        }
+        // cambioNav(value){
+        //     this.$emit('clicked',value)
+        // }
     }
 }
 </script>

@@ -12,7 +12,7 @@
           <i class="fab fa-google"></i>
           <i class="fab fa-twitter"></i>
         </div>
-        <button class="btn">Regístrate</button>
+        <button class="btn" >Regístrate</button>
       </div>
 
   </div>

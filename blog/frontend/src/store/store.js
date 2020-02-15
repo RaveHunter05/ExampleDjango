@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state:{
         message:'Hola hijos de pvta :v',
-        count:0
+        count:0,
+        header:1
     },
     mutations:{ //here you have syncronous functions
         increment(state,payload){

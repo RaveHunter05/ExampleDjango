@@ -52,7 +52,7 @@ export default {
   methods: {
     principal() {
       this.$router.replace("/body2");
-      this.$emit("clicked2", 0);
+      // this.$emit("clicked2", 0);
     },
     changeVisibility(){
         this.escondido=!this.escondido;
@@ -63,7 +63,7 @@ export default {
     },
     irPrincipal(){
         this.$router.replace('/');
-        this.$emit("clicked2", 0);
+        // this.$emit("clicked2", 0);
     }
   }
 };
