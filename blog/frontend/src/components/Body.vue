@@ -6,7 +6,6 @@
     <div class="secondaire">
         <p>"La música es el alimento del alma"</p>
         <p>-Arthur Schopenhauer</p>
-        <p>{{message}}</p>
     </div>
     <div class="troisieme">
         <p>
