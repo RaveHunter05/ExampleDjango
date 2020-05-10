@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="navbar">
-      <h2 @click="principal()">PyShark</h2>
+      <h2 class="titulo-header" @click="principal()">PyShark</h2>
       <nav class="derechaNavBar">
         <div>
           <img

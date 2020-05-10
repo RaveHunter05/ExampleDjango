@@ -2,7 +2,7 @@
   <div>
       <div class="navbar">
     <div class="izquierdaNavBar">
-        <h2><router-link class='h2' to='/'>PyShark</router-link></h2>
+        <h2 class="titulo-header"><router-link class='h2' to='/'>PyShark</router-link></h2>
     </div>
       <nav class="derechaNavBar">
           <ul >

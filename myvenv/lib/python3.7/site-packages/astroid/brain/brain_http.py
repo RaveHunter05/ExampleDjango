@@ -1,4 +1,4 @@
-# Copyright (c) 2018 Claudiu Popa <pcmanticore@gmail.com>
+# Copyright (c) 2018-2019 Claudiu Popa <pcmanticore@gmail.com>
 
 # Licensed under the LGPL: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html
 # For details: https://github.com/PyCQA/astroid/blob/master/COPYING.LESSER
@@ -17,6 +17,16 @@ def _http_transform():
     _HTTPStatus = namedtuple('_HTTPStatus', 'value phrase description')
 
     class HTTPStatus:
+
+        @property
+        def phrase(self):
+            return ""
+        @property
+        def value(self):
+            return 0
+        @property
+        def description(self):
+            return ""
 
         # informational
         CONTINUE = _HTTPStatus(100, 'Continue', 'Request received, please continue')

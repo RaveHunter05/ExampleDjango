@@ -1,11 +1,14 @@
+# -*- coding: utf-8 -*-
 # Copyright (c) 2013-2014 LOGILAB S.A. (Paris, FRANCE) <contact@logilab.fr>
 # Copyright (c) 2014 Google, Inc.
 # Copyright (c) 2014 Cole Robinson <crobinso@redhat.com>
-# Copyright (c) 2015-2016 Claudiu Popa <pcmanticore@gmail.com>
+# Copyright (c) 2015-2016, 2018 Claudiu Popa <pcmanticore@gmail.com>
 # Copyright (c) 2015-2016 Ceridwen <ceridwenv@gmail.com>
 # Copyright (c) 2015 David Shea <dshea@redhat.com>
 # Copyright (c) 2016 Jakub Wilk <jwilk@jwilk.net>
 # Copyright (c) 2016 Giuseppe Scrivano <gscrivan@redhat.com>
+# Copyright (c) 2018 Christoph Reiter <reiter.christoph@gmail.com>
+# Copyright (c) 2019 Philipp Hörist <philipp@hoerist.com>
 
 # Licensed under the LGPL: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html
 # For details: https://github.com/PyCQA/astroid/blob/master/COPYING.LESSER
@@ -29,6 +32,36 @@ _inspected_modules = {}
 
 _identifier_re = r"^[A-Za-z_]\w*$"
 
+_special_methods = frozenset(
+    {
+        "__lt__",
+        "__le__",
+        "__eq__",
+        "__ne__",
+        "__ge__",
+        "__gt__",
+        "__iter__",
+        "__getitem__",
+        "__setitem__",
+        "__delitem__",
+        "__len__",
+        "__bool__",
+        "__nonzero__",
+        "__next__",
+        "__str__",
+        "__len__",
+        "__contains__",
+        "__enter__",
+        "__exit__",
+        "__repr__",
+        "__getattr__",
+        "__setattr__",
+        "__delattr__",
+        "__del__",
+        "__hash__",
+    }
+)
+
 
 def _gi_build_stub(parent):
     """
@@ -40,7 +73,7 @@ def _gi_build_stub(parent):
     constants = {}
     methods = {}
     for name in dir(parent):
-        if name.startswith("__"):
+        if name.startswith("__") and name not in _special_methods:
             continue
 
         # Check if this is a valid name in python
